@@ -29,9 +29,9 @@ export function TestimonialsSection() {
         <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <SectionHeading
             align="left"
-            copy="The review language stays grounded and believable, highlighting courtesy, fairness, speed, and clear communication."
+            copy="Drivers come back for clear communication, fair pricing, and repairs handled by a team that treats people with respect."
             eyebrow="Customer Reviews"
-            title="Realistic Words That Build Confidence"
+            title="Trusted by Local Drivers"
           />
           <div className="rounded-sm border border-white/10 bg-white/[0.045] p-6 text-slate-300">
             <div className="flex items-center gap-2 text-scarlet">
@@ -40,8 +40,8 @@ export function TestimonialsSection() {
               ))}
             </div>
             <p className="mt-4 text-sm leading-7">
-              4.6-rated public reputation messaging, framed with restraint so the
-              demo feels authentic instead of exaggerated.
+              A 4.6-star Google rating backed by straightforward service and
+              professional communication.
             </p>
           </div>
         </div>

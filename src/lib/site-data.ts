@@ -2,12 +2,14 @@ export const business = {
   name: "Cruise In Auto Repair",
   address: "5939 Middlebelt Rd",
   city: "Garden City, MI 48135",
+  fullAddress: "5939 Middlebelt Rd, Garden City, MI 48135",
   phone: "(734) 805-9370",
-  phoneHref: "tel:+17348059370",
+  phoneHref: "tel:7348059370",
+  mapsHref:
+    "https://www.google.com/maps/search/?api=1&query=5939%20Middlebelt%20Rd%2C%20Garden%20City%2C%20MI%2048135",
   hours: [
-    { day: "Monday - Friday", time: "8:00 AM - 6:00 PM" },
-    { day: "Saturday", time: "Closed" },
-    { day: "Sunday", time: "Closed" }
+    { day: "Monday-Friday", time: "8:00 AM - 6:00 PM" },
+    { day: "Saturday-Sunday", time: "Closed" }
   ]
 };
 

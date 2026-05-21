@@ -37,7 +37,7 @@ export function GallerySection() {
     <section className="section-shell bg-asphalt py-24 sm:py-28">
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeading
-          copy="A high-impact visual section gives the shop a premium portfolio feel, showing the care and detail behind the repair process."
+          copy="Clean bays, careful work, and detailed repairs show the kind of service quality customers can expect from the shop."
           eyebrow="Shop Quality"
           title="Before / After Gallery"
         />

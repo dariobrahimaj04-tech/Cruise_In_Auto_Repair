@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Cruise In Auto Repair | Garden City, MI Auto Repair",
   description:
-    "Premium demo website for Cruise In Auto Repair, a trusted local automotive repair shop in Garden City, Michigan.",
+    "Trusted auto repair in Garden City, Michigan, with honest estimates, fair pricing, and experienced technicians.",
   openGraph: {
     title: "Cruise In Auto Repair",
     description:

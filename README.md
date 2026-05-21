@@ -1,6 +1,6 @@
 # Cruise In Auto Repair
 
-Production-quality demo website for Cruise In Auto Repair in Garden City, Michigan.
+Production-quality website for Cruise In Auto Repair in Garden City, Michigan.
 
 ## Stack
 
@@ -24,4 +24,4 @@ pnpm lint
 pnpm build
 ```
 
-The site is frontend-only and deploy-ready for Vercel.
+The site is deploy-ready for Vercel.

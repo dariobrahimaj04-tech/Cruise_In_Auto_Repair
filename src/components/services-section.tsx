@@ -55,7 +55,7 @@ export function ServicesSection() {
     <section className="section-shell bg-asphalt py-24 sm:py-28" id="services">
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeading
-          copy="From daily maintenance to complex drivability issues, the site positions Cruise In as a capable local shop with premium service standards."
+          copy="From routine maintenance to complex drivability issues, Cruise In handles the repairs Garden City drivers depend on every week."
           eyebrow="Complete Repair Services"
           title="Built For The Work Local Drivers Actually Need"
         />

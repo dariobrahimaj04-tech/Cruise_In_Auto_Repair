@@ -9,12 +9,12 @@ const footerLinks = [
 ];
 
 const serviceLinks = [
-  "Engine Repair",
-  "Brake Service",
-  "Transmission Repair",
-  "Diagnostics",
-  "Oil Changes",
-  "Suspension & Steering"
+  { label: "Engine Repair", href: "#services" },
+  { label: "Brake Service", href: "#services" },
+  { label: "Transmission Repair", href: "#services" },
+  { label: "Diagnostics", href: "#services" },
+  { label: "Oil Changes", href: "#services" },
+  { label: "Suspension & Steering", href: "#services" }
 ];
 
 export function Footer() {
@@ -39,7 +39,7 @@ export function Footer() {
           <div className="mt-6 flex gap-3">
             {[
               { label: "Call", icon: Phone, href: business.phoneHref },
-              { label: "Map", icon: MapPin, href: "#contact" },
+              { label: "Map", icon: MapPin, href: business.mapsHref },
               { label: "Message", icon: MessageCircle, href: "#contact" }
             ].map((item) => {
               const Icon = item.icon;
@@ -49,6 +49,8 @@ export function Footer() {
                   className="grid h-10 w-10 place-items-center rounded-sm border border-white/10 bg-white/[0.06] text-slate-200 transition hover:border-scarlet/45 hover:text-white focus-ring"
                   href={item.href}
                   key={item.label}
+                  rel={item.label === "Map" ? "noreferrer" : undefined}
+                  target={item.label === "Map" ? "_blank" : undefined}
                 >
                   <Icon aria-hidden="true" className="h-4 w-4" />
                 </a>
@@ -80,9 +82,13 @@ export function Footer() {
           </h3>
           <div className="mt-5 flex flex-col gap-3">
             {serviceLinks.map((service) => (
-              <span className="text-sm text-slate-400" key={service}>
-                {service}
-              </span>
+              <a
+                className="text-sm text-slate-400 transition hover:text-white focus-ring"
+                href={service.href}
+                key={service.label}
+              >
+                {service.label}
+              </a>
             ))}
           </div>
         </div>
@@ -92,11 +98,16 @@ export function Footer() {
             Contact
           </h3>
           <div className="mt-5 space-y-4 text-sm leading-7 text-slate-400">
-            <p>
+            <a
+              className="block transition hover:text-white focus-ring"
+              href={business.mapsHref}
+              rel="noreferrer"
+              target="_blank"
+            >
               {business.address}
               <br />
               {business.city}
-            </p>
+            </a>
             <a
               className="inline-flex items-center gap-2 font-bold text-white transition hover:text-ember focus-ring"
               href={business.phoneHref}
@@ -111,7 +122,7 @@ export function Footer() {
       <div className="border-t border-white/10 px-5 py-6 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>Copyright 2026 Cruise In Auto Repair. All rights reserved.</p>
-          <p>Premium local business website demo.</p>
+          <p>Garden City, Michigan</p>
         </div>
       </div>
     </footer>

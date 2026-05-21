@@ -1,48 +1,21 @@
 "use client";
 
-import { animate, motion, useInView } from "framer-motion";
-import { Award, Car, Gauge, Users } from "lucide-react";
+import { motion } from "framer-motion";
+import { Award, Car, Star, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 
 type Stat = {
   label: string;
-  value: number;
-  suffix: string;
+  value: string;
   icon: LucideIcon;
 };
 
 const stats: Stat[] = [
-  { label: "Years Serving Community", value: 10, suffix: "+", icon: Award },
-  { label: "Vehicles Repaired", value: 4500, suffix: "+", icon: Car },
-  { label: "Repeat Customers", value: 70, suffix: "%", icon: Users },
-  { label: "Customer Satisfaction", value: 96, suffix: "%", icon: Gauge }
+  { label: "Years Serving Community", value: "10+", icon: Award },
+  { label: "Vehicles Serviced", value: "1,500+", icon: Car },
+  { label: "Google Rating", value: "4.6★", icon: Star },
+  { label: "Repeat/Referral Customers", value: "90%+", icon: Users }
 ];
-
-function AnimatedCounter({ value, suffix }: Pick<Stat, "value" | "suffix">) {
-  const ref = useRef<HTMLSpanElement | null>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!isInView) return undefined;
-
-    const controls = animate(0, value, {
-      duration: 1.45,
-      ease: "easeOut",
-      onUpdate: (latest) => setCount(Math.round(latest))
-    });
-
-    return () => controls.stop();
-  }, [isInView, value]);
-
-  return (
-    <span ref={ref}>
-      {count.toLocaleString()}
-      {suffix}
-    </span>
-  );
-}
 
 export function StatsSection() {
   return (
@@ -78,7 +51,7 @@ export function StatsSection() {
                   <Icon aria-hidden="true" className="h-6 w-6" />
                 </div>
                 <p className="mt-6 text-4xl font-black tracking-tight text-white sm:text-5xl">
-                  <AnimatedCounter suffix={stat.suffix} value={stat.value} />
+                  {stat.value}
                 </p>
                 <p className="mt-3 text-sm font-bold uppercase tracking-[0.15em] text-slate-400">
                   {stat.label}

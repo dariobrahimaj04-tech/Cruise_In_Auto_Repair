@@ -34,14 +34,14 @@ export function WhyChooseSection() {
 
           <div className="mt-8 space-y-5 text-base leading-8 text-slate-300">
             <p>
-              Cruise In Auto Repair is presented as the kind of neighborhood shop
-              drivers remember: practical, direct, and focused on fixing the right
-              problem the first time.
+              Cruise In Auto Repair is the kind of neighborhood shop drivers
+              remember: practical, direct, and focused on fixing the right problem
+              the first time.
             </p>
             <p>
-              The message centers on honesty, transparent recommendations, experienced
-              technicians, fair pricing, and a customer-first mentality that fits a
-              trusted Garden City repair business.
+              Expect honest estimates, transparent recommendations, experienced
+              technicians, fair pricing, and a customer-first approach from a
+              trusted Garden City repair team.
             </p>
           </div>
 

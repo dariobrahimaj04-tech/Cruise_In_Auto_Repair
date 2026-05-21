@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, Mail, MapPin, Navigation, Phone, Send } from "lucide-react";
+import { Clock, MapPin, Navigation, Phone, Send } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { business } from "@/lib/site-data";
 
@@ -10,9 +10,9 @@ export function ContactSection() {
     <section className="bg-asphalt py-24 sm:py-28" id="contact">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeading
-          copy="Make the next step obvious with direct contact details, business hours, a polished request form, and a map-style location panel."
+          copy="Call the shop or request an appointment for honest repair guidance from a trusted Garden City team."
           eyebrow="Contact The Shop"
-          title="Schedule Service In Garden City"
+          title="Schedule Service in Garden City"
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
@@ -32,13 +32,18 @@ export function ContactSection() {
                   <p className="text-sm font-black uppercase tracking-[0.14em] text-white">
                     Address
                   </p>
-                  <p className="mt-2 leading-7 text-slate-300">
+                  <a
+                    className="mt-2 block leading-7 text-slate-300 transition hover:text-white focus-ring"
+                    href={business.mapsHref}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
                     {business.name}
                     <br />
                     {business.address}
                     <br />
                     {business.city}
-                  </p>
+                  </a>
                 </div>
               </div>
 
@@ -113,17 +118,17 @@ export function ContactSection() {
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="block">
                 <span className="text-xs font-black uppercase tracking-[0.16em] text-slate-300">
-                  Name
+                  Full Name
                 </span>
                 <input
                   className="mt-3 w-full rounded-sm border border-white/10 bg-asphalt px-4 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-scarlet"
-                  placeholder="Your name"
+                  placeholder="Full name"
                   type="text"
                 />
               </label>
               <label className="block">
                 <span className="text-xs font-black uppercase tracking-[0.16em] text-slate-300">
-                  Phone
+                  Phone Number
                 </span>
                 <input
                   className="mt-3 w-full rounded-sm border border-white/10 bg-asphalt px-4 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-scarlet"
@@ -133,17 +138,45 @@ export function ContactSection() {
               </label>
               <label className="block sm:col-span-2">
                 <span className="text-xs font-black uppercase tracking-[0.16em] text-slate-300">
-                  Email
+                  Vehicle Year / Make / Model
                 </span>
                 <input
                   className="mt-3 w-full rounded-sm border border-white/10 bg-asphalt px-4 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-scarlet"
-                  placeholder="you@example.com"
-                  type="email"
+                  placeholder="2018 Ford F-150"
+                  type="text"
+                />
+              </label>
+              <label className="block">
+                <span className="text-xs font-black uppercase tracking-[0.16em] text-slate-300">
+                  Service Needed
+                </span>
+                <select
+                  className="mt-3 w-full rounded-sm border border-white/10 bg-asphalt px-4 py-4 text-white outline-none transition focus:border-scarlet"
+                  defaultValue=""
+                >
+                  <option disabled value="">
+                    Select a service
+                  </option>
+                  <option>Engine Repair</option>
+                  <option>Brake Service</option>
+                  <option>Transmission Repair</option>
+                  <option>Diagnostics</option>
+                  <option>Oil Change</option>
+                  <option>Suspension & Steering</option>
+                </select>
+              </label>
+              <label className="block">
+                <span className="text-xs font-black uppercase tracking-[0.16em] text-slate-300">
+                  Preferred Date
+                </span>
+                <input
+                  className="mt-3 w-full rounded-sm border border-white/10 bg-asphalt px-4 py-4 text-white outline-none transition focus:border-scarlet"
+                  type="date"
                 />
               </label>
               <label className="block sm:col-span-2">
                 <span className="text-xs font-black uppercase tracking-[0.16em] text-slate-300">
-                  Vehicle / Service Needed
+                  Message
                 </span>
                 <textarea
                   className="mt-3 min-h-40 w-full resize-none rounded-sm border border-white/10 bg-asphalt px-4 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-scarlet"
@@ -156,14 +189,9 @@ export function ContactSection() {
               className="mt-6 inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-sm bg-scarlet px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white shadow-redglow transition hover:bg-ember focus-ring sm:w-auto"
               type="submit"
             >
-              Send Request
+              Request Appointment
               <Send aria-hidden="true" className="h-4 w-4" />
             </button>
-
-            <div className="mt-6 flex items-center gap-3 text-sm text-slate-400">
-              <Mail aria-hidden="true" className="h-4 w-4 text-scarlet" />
-              <span>Frontend-only demo form. No backend submission is configured.</span>
-            </div>
           </motion.form>
         </div>
       </div>
