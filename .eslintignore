@@ -1,0 +1,5 @@
+node_modules
+.next
+.tools
+.qa
+next-env.d.ts
